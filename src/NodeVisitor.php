@@ -28,8 +28,6 @@ use PhpParser\NodeVisitorAbstract;
 /**
  * On node traversal, this visitor converts any AST to one just containing stub
  * definitions, removing anything uninteresting.
- *
- * @internal
  */
 class NodeVisitor extends NodeVisitorAbstract
 {
