@@ -3,8 +3,9 @@ namespace StubsGenerator;
 
 use Exception;
 use PhpParser\NodeTraverser;
+use PhpParser\Lexer;
+use PhpParser\Parser\Php8;
 use PhpParser\NodeVisitor\NameResolver;
-use PhpParser\ParserFactory;
 use PhpParser\PrettyPrinter\Standard;
 use PHPUnit\Framework\TestCase;
 
@@ -12,7 +13,7 @@ class NodeVisitorTest extends TestCase
 {
     private function parse(string $php, int $symbols, array $config): NodeVisitor
     {
-        $parser = (new ParserFactory())->create(ParserFactory::PREFER_PHP7);
+        $parser = new Php8(new Lexer());
 
         $traverser = new NodeTraverser();
         $traverser->addVisitor(new NameResolver());

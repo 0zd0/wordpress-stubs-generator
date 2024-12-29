@@ -171,8 +171,8 @@ class NodeVisitor extends NodeVisitorAbstract
         } elseif (
             $node instanceof Expression &&
             $node->expr instanceof FuncCall &&
-            $node->expr->name instanceof Name &&
-            $node->expr->name->parts[0] === 'define'
+            $node->expr->name instanceof Name
+            && $node->expr->name->getParts()[0] === 'define'
         ) {
             $this->isInDeclaration = true;
         } elseif ($node instanceof If_) {
@@ -207,7 +207,7 @@ class NodeVisitor extends NodeVisitorAbstract
                 $node instanceof Expression &&
                 $node->expr instanceof FuncCall &&
                 $node->expr->name instanceof Name &&
-                $node->expr->name->parts[0] === 'define'
+                $node->expr->name->getParts()[0] === 'define'
             )
         ) {
             // We're leaving one of these.
@@ -388,7 +388,7 @@ class NodeVisitor extends NodeVisitorAbstract
                 $node instanceof Expression &&
                 $node->expr instanceof FuncCall &&
                 $node->expr->name instanceof Name &&
-                $node->expr->name->parts[0] === 'define'
+                $node->expr->name->getParts()[0] === 'define'
             ) {
                 $fullyQualifiedName = $node->expr->args[0]->value->value;
 
