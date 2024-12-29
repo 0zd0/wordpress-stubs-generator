@@ -2,9 +2,10 @@
 namespace StubsGenerator;
 
 use PhpParser\Error;
+use PhpParser\Lexer;
 use PhpParser\NodeTraverser;
 use PhpParser\NodeVisitor\NameResolver;
-use PhpParser\ParserFactory;
+use PhpParser\Parser\Php8;
 use RuntimeException;
 use Symfony\Component\Finder\Finder;
 
@@ -112,7 +113,7 @@ class StubsGenerator
      */
     public function generate(Finder $finder, NodeVisitor $visitor = null): Result
     {
-        $parser = (new ParserFactory())->create(ParserFactory::PREFER_PHP7);
+        $parser = new Php8(new Lexer());
 
         if (!($visitor instanceof NodeVisitor)) {
             $visitor = new NodeVisitor();
