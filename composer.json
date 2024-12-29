@@ -1,5 +1,5 @@
 {
-    "name": "php-stubs/generator",
+    "name": "onepix/wordpress-stubs-generator",
     "description": "Generate stubs from any PHP code for IDE completion and static analysis.",
     "type": "library",
     "license": "MIT",
@@ -7,11 +7,11 @@
         "IDE",
         "static analysis"
     ],
-    "homepage": "https://github.com/php-stubs/generator",
+    "homepage": "https://github.com/0zd0/wordpress-stubs-generator",
     "authors": [
         {
-            "name": "Giaco Corsiglia",
-            "email": "GiacoCorsiglia@gmail.com"
+            "name": "Onepix",
+            "email": "info@onepix.net"
         }
     ],
     "autoload": {
@@ -19,11 +19,14 @@
             "StubsGenerator\\": "src/"
         }
     },
+    "replace": {
+        "php-stubs/generator": "*"
+    },
     "bin": [
         "bin/generate-stubs"
     ],
     "require": {
-        "php": "^7.3 || ^8.0",
+        "php": "^8.1",
         "nikic/php-parser": "^4.10",
         "symfony/console": "^5.1 || ^6.0",
         "symfony/filesystem": "^5.0 || ^6.0",
