@@ -89,9 +89,9 @@ class StubsGenerator
     public const ALL = self::FUNCTIONS | self::CLASSES | self::TRAITS | self::INTERFACES | self::GLOBALS | self::CONSTANTS;
 
     /** @var int */
-    private $symbols;
+    private int $symbols;
     /** @var array */
-    private $config;
+    private array $config;
 
     /**
      * @param int $symbols Bitmask of symbol types to include in the stubs.
@@ -107,7 +107,7 @@ class StubsGenerator
      * pretty-printed stubs.
      *
      * @param Finder $finder The set of files to generate (merged) stubs for.
-     * @param NodeVisitor $visitor The optional node visitor to override the default.
+     * @param NodeVisitor|null $visitor The optional node visitor to override the default.
      *
      * @return Result
      */
