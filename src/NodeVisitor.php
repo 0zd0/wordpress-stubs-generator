@@ -291,6 +291,16 @@ class NodeVisitor extends NodeVisitorAbstract
     }
 
     /**
+     * Adds a node to the global namespace collection
+     *
+     * @param Node $node Node to add to global namespace
+     */
+    public function addNodeToGlobalNamespace(Node $node): void
+    {
+        $this->globalNamespace->stmts[] = $node;
+    }
+
+    /**
      * Returns the stored set of stub nodes which are built up during traversal.
      *
      * @return Node[]
