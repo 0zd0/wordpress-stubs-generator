@@ -22,7 +22,7 @@ abstract class A extends \B implements \C
     }
 
     /** doc */
-    protected abstract function e($a) : string;
+    abstract protected function e($a) : string;
 }
 
 class D

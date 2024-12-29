@@ -25,7 +25,7 @@ switch ($foo) {
         break;
 }
 
-'Pointless expression :)';
+
 
 exit;
 

@@ -115,7 +115,7 @@ class StubsGenerator
         $parser = (new ParserFactory())->create(ParserFactory::PREFER_PHP7);
 
         if (!($visitor instanceof NodeVisitor)) {
-            $visitor = new NodeVisitor;
+            $visitor = new NodeVisitor();
         }
 
         $visitor->init($this->symbols, $this->config);
