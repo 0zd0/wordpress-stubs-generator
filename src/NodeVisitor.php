@@ -297,7 +297,9 @@ class NodeVisitor extends NodeVisitorAbstract
      */
     public function addNodeToGlobalNamespace(Node $node): void
     {
-        $this->globalNamespace->stmts[] = $node;
+        if ($this->needsNode($node, $this->globalNamespace->name?->toString() ?? '')) {
+            $this->globalNamespace->stmts[] = $node;
+        }
     }
 
     /**
