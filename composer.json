@@ -38,7 +38,7 @@
     },
     "scripts": {
         "test": "phpunit",
-        "cs": "php-cs-fixer fix --dry-run",
+        "cs": "php-cs-fixer fix --verbose --dry-run",
         "cs:fix": "php-cs-fixer fix",
         "check": [
             "@cs",

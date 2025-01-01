@@ -14,7 +14,7 @@
 >
     <testsuites>
         <testsuite name="Stub Generator Tests">
-            <directory>test</directory>
+            <directory>tests</directory>
         </testsuite>
     </testsuites>
 </phpunit>

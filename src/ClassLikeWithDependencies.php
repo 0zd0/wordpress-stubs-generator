@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace StubsGenerator;
 
 use PhpParser\Node\Name;
@@ -67,8 +70,6 @@ class ClassLikeWithDependencies
     }
 
     /**
-     * @param string $name
-     * @return string
      */
     private function globalQualify(string $name): string
     {

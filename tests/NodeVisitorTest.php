@@ -1,11 +1,14 @@
 <?php
+
+declare(strict_types=1);
+
 namespace StubsGenerator;
 
 use Exception;
-use PhpParser\NodeTraverser;
 use PhpParser\Lexer;
-use PhpParser\Parser\Php8;
+use PhpParser\NodeTraverser;
 use PhpParser\NodeVisitor\NameResolver;
+use PhpParser\Parser\Php8;
 use PhpParser\PrettyPrinter\Standard;
 use PHPUnit\Framework\TestCase;
 
@@ -68,8 +71,8 @@ class NodeVisitorTest extends TestCase
 
             $inFile = "{$baseDir}{$inFile}.in.php";
             $outFile = "{$baseDir}{$outFile}.out.php";
-            $symbols = $symbols ?? StubsGenerator::ALL;
-            $config = $config ?? [];
+            $symbols ??= StubsGenerator::ALL;
+            $config ??= [];
 
             if (!file_exists($inFile)) {
                 throw new Exception("$inFile does not exist");

@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace StubsGenerator;
 
 use PhpParser\Error;
@@ -88,9 +91,9 @@ class StubsGenerator
      */
     public const ALL = self::FUNCTIONS | self::CLASSES | self::TRAITS | self::INTERFACES | self::GLOBALS | self::CONSTANTS;
 
-    /** @var int */
+    /**  */
     private int $symbols;
-    /** @var array */
+    /**  */
     private array $config;
 
     /**
@@ -109,7 +112,6 @@ class StubsGenerator
      * @param Finder $finder The set of files to generate (merged) stubs for.
      * @param NodeVisitor|null $visitor The optional node visitor to override the default.
      *
-     * @return Result
      */
     public function generate(Finder $finder, NodeVisitor $visitor = null): Result
     {

@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace StubsGenerator;
 
 use Symfony\Component\Finder\Finder as SymfonyFinder;

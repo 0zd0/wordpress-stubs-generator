@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace StubsGenerator;
 
 use ArrayIterator;
@@ -118,7 +121,7 @@ class GenerateStubsCommand extends Command
         $finder = $this->parseSources($input);
         $generator = new StubsGenerator($this->parseSymbols($input), [
             'nullify_globals' => $input->getOption('nullify-globals'),
-            'include_inaccessible_class_nodes' => $input->getOption('include-inaccessible-class-nodes')
+            'include_inaccessible_class_nodes' => $input->getOption('include-inaccessible-class-nodes'),
         ]);
 
         $result = $generator->generate($finder, $visitor);
@@ -182,7 +185,6 @@ class GenerateStubsCommand extends Command
     /**
      * Validate and get full paths to the requested sources.
      *
-     * @param InputInterface $input
      *
      * @throws InvalidArgumentException If any source does not exist.
      *
@@ -236,7 +238,6 @@ class GenerateStubsCommand extends Command
      * If any symbol types are passed explicitly, only use those; otherwise use
      * the default set.
      *
-     * @param InputInterface $input
      *
      * @return int Bitmask of symbol types.
      */

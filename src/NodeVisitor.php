@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace StubsGenerator;
 
 use PhpParser\Node;
@@ -345,10 +348,8 @@ class NodeVisitor extends NodeVisitorAbstract
     /**
      * Determines if we should keep the given `$node` in `$this->leaveNode()`.
      *
-     * @param Node $node
      * @param string $namespace The namespace we're in.
      *
-     * @return bool
      */
     private function needsNode(Node $node, string $namespace): bool
     {
@@ -430,7 +431,7 @@ class NodeVisitor extends NodeVisitorAbstract
     /**
      * Keeps a count of declarations by type and name of node.
      *
-     * @param string $type      One of `array_keys($this->counts)`.
+     * @param string $type One of `array_keys($this->counts)`.
      * @param string|null $name Name of the node.  Theoretically could be null.
      *
      * @return bool If true, this is the first declaration of this type with
@@ -451,8 +452,6 @@ class NodeVisitor extends NodeVisitorAbstract
      * Populates the `classLikeNamespaces` property with namespaces with classes
      * declared in a valid order.
      *
-     * @param ClassLikeWithDependencies $clwd
-     * @return void
      */
     private function resolveClassLike(ClassLikeWithDependencies $clwd): void
     {
@@ -490,7 +489,6 @@ class NodeVisitor extends NodeVisitorAbstract
      * Determines if each namespace in the list is a global namespace.
      *
      * @param Namespace_[] $namespaces
-     * @return bool
      */
     private function allAreGlobal(array $namespaces): bool
     {
