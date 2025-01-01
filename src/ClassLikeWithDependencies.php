@@ -59,7 +59,7 @@ class ClassLikeWithDependencies
     }
 
     /**
-     * @param Name[] $names
+     * @param  Name[]   $names
      * @return string[]
      */
     private function namesToStrings(array $names): array

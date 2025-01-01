@@ -26,7 +26,7 @@ class Result implements IteratorAggregate
     private $unparsed;
 
     /**
-     * @param NodeVisitor $visitor The visitor which was used to generate stubs.
+     * @param NodeVisitor  $visitor  The visitor which was used to generate stubs.
      * @param \Exception[] $unparsed A map of file path => reason for any
      *                               unparsed files.
      * @psalm-param $unparsed array<string, \Exception>

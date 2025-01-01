@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace StubsGenerator;
+namespace StubsGenerator\Tests;
 
 use Exception;
 use PhpParser\Lexer;
@@ -11,6 +11,8 @@ use PhpParser\NodeVisitor\NameResolver;
 use PhpParser\Parser\Php8;
 use PhpParser\PrettyPrinter\Standard;
 use PHPUnit\Framework\TestCase;
+use StubsGenerator\NodeVisitor;
+use StubsGenerator\StubsGenerator;
 
 class NodeVisitorTest extends TestCase
 {

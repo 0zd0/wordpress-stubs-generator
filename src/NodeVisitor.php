@@ -431,7 +431,7 @@ class NodeVisitor extends NodeVisitorAbstract
     /**
      * Keeps a count of declarations by type and name of node.
      *
-     * @param string $type One of `array_keys($this->counts)`.
+     * @param string      $type One of `array_keys($this->counts)`.
      * @param string|null $name Name of the node.  Theoretically could be null.
      *
      * @return bool If true, this is the first declaration of this type with
@@ -503,7 +503,7 @@ class NodeVisitor extends NodeVisitorAbstract
     /**
      * Merges the statements of each namespace into one array.
      *
-     * @param Namespace_[] $namespaces
+     * @param  Namespace_[] $namespaces
      * @return Stmt[]
      */
     private function reduceStmts(array $namespaces): array

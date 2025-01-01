@@ -109,7 +109,7 @@ class StubsGenerator
      * Iterates through all the files found by the `$finder` and returns
      * pretty-printed stubs.
      *
-     * @param Finder $finder The set of files to generate (merged) stubs for.
+     * @param Finder           $finder  The set of files to generate (merged) stubs for.
      * @param NodeVisitor|null $visitor The optional node visitor to override the default.
      *
      */
