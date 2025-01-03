@@ -1,12 +1,9 @@
 #!/usr/bin/env php
 <?php
 
-foreach ([__DIR__ . '/../../../autoload.php', __DIR__ . '/../vendor/autoload.php'] as $file) {
-    if (file_exists($file)) {
-        require $file;
-        break;
-    }
-}
+declare(strict_types=1);
+
+include $_composer_autoload_path ?? __DIR__ . '/../vendor/autoload.php';
 
 use StubsGenerator\GenerateStubsCommand;
 use Symfony\Component\Console\Application;
